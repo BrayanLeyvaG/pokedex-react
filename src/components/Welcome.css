@@ -1,0 +1,133 @@
+.welcome-container{
+    background-color: #E5E5E5;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.welcome-container h5{
+    font-size: 3em;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color: #FE1936;
+    margin-top: 72px;
+    text-align: center;
+}
+
+.welcome-container p{
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 1.5em;
+    margin: 16px 0 60px 0;
+}
+
+.form-welcome{
+    margin-bottom: 200px;
+}
+
+.form-welcome input{
+    font-family: 'Roboto', sans-serif;
+    font-size: 2em;
+    padding: 10px;
+    background: #FFFFFF;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
+    border: none;
+}
+
+.form-welcome button{
+    font-size: 2em;
+    padding: 10px 50px;
+    background: #D93F3F;
+    border: none;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.form-welcome button:hover{
+    background-color: #b93434;
+}
+
+.black-line{
+    width: 100vw;
+    height: 69px;
+    background-color: #0C0C0C;
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+}
+
+.red-line{
+    width: 100vw;
+    height: 123.18px;
+    background-color: #DD1A1A;
+    position: absolute;
+    left: 0;
+    bottom: 50px;
+}
+
+.pokeball-welcome{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.big-ball{
+    width: 117px;
+    height: 117px;
+    background: #FFFFFF;
+    border: 12px solid #000000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+
+}
+
+.small-ball{
+    width: 63px;
+    height: 63px;
+    border-radius: 50%;
+    background: #212121;
+    border: 12px solid #000000;
+}
+
+
+@media (max-width: 700px) {
+    .welcome-container img{
+        width: 90%;
+    }
+
+    .welcome-container h5{
+        font-size: 2em;
+        margin-top: 40px;
+    }
+
+    .welcome-container p{
+        font-size: 1.2em;
+        margin-bottom: 30px;
+    }
+
+    .form-welcome{
+        display: flex;
+        align-items: center;
+        margin-bottom: 200px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .form-welcome input{
+        width: 80%;
+        font-size: 1.3em;
+    }
+    .form-welcome button{
+        font-size: 1.3em;
+    }
+
+}
