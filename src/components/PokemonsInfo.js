@@ -98,23 +98,27 @@ export const PokemonsInfo = () => {
               <h3 className='pokemon-name-detail' style={fontColor}>{`${pokemonInfo.forms?.[0].name.charAt(0).toUpperCase()}${pokemonInfo.forms?.[0].name.slice(1)}`}</h3>
               <div className='separator'></div>
             </div>
-            <div>
-              <div>
-                <span>Weight</span>
-                <span>{pokemonInfo.weight} hectograms</span>
+            <div className='pokemon-measures'>
+              <div className='wh-container'>
+                <span className='tm-measure'>Weight</span>
+                <span className='qty-measure'>{pokemonInfo.weight}</span>
+                <span className='tm-measure'>hectograms</span>
               </div>
-              <div>
-                <span>Height</span>
-                <span>{pokemonInfo.height} decimetres</span>
+              <div className='wh-container'>
+                <span className='tm-measure'>Height</span>
+                <span className='qty-measure'>{pokemonInfo.height}</span>
+                <span className='tm-measure'>decimetres</span>
               </div>
             </div>
-            <div>
-              <span>Type</span>
-              {pokemonInfo.types?.[1]?.type.name ? <div><span>{`${pokemonInfo.types?.[0].type.name.charAt(0).toUpperCase()}${pokemonInfo.types?.[0].type.name.slice(1)}`}</span><span>{`${pokemonInfo.types?.[1].type.name.charAt(0).toUpperCase()}${pokemonInfo.types?.[1].type.name.slice(1)}`}</span></div>:<span>{`${pokemonInfo.types?.[0].type.name.charAt(0).toUpperCase()}${pokemonInfo.types?.[0].type.name.slice(1)}`}</span>}
-            </div>
-            <div>
-              <span>Abilities</span>
-              {pokemonInfo.abilities?.[1]?.ability.name ? <div><span>{`${pokemonInfo.abilities?.[0].ability.name.charAt(0).toUpperCase()}${pokemonInfo.abilities?.[0].ability.name.slice(1)}`}</span><span>{`${pokemonInfo.abilities?.[1].ability.name.charAt(0).toUpperCase()}${pokemonInfo.abilities?.[1].ability.name.slice(1)}`}</span></div>:<span>{`${pokemonInfo.abilities?.[0].ability.name.charAt(0).toUpperCase()}${pokemonInfo.abilities?.[0].ability.name.slice(1)}`}</span>}
+            <div className='type-ab-container'>
+              <div className='tyab-container'>
+                <span>Type</span>
+                {pokemonInfo.types?.[1]?.type.name ? <div className='ta-container-details'><span className='ta-boxes'>{`${pokemonInfo.types?.[0].type.name.charAt(0).toUpperCase()}${pokemonInfo.types?.[0].type.name.slice(1)}`}</span><span className='ta-boxes'>{`${pokemonInfo.types?.[1].type.name.charAt(0).toUpperCase()}${pokemonInfo.types?.[1].type.name.slice(1)}`}</span></div>:<span className='ta-boxes'>{`${pokemonInfo.types?.[0].type.name.charAt(0).toUpperCase()}${pokemonInfo.types?.[0].type.name.slice(1)}`}</span>}
+              </div>
+              <div className='tyab-container'>
+                <span>Abilities</span>
+                {pokemonInfo.abilities?.[1]?.ability.name ? <div className='ta-container-details'><span className='ta-boxes'>{`${pokemonInfo.abilities?.[0].ability.name.charAt(0).toUpperCase()}${pokemonInfo.abilities?.[0].ability.name.slice(1)}`}</span><span className='ta-boxes'>{`${pokemonInfo.abilities?.[1].ability.name.charAt(0).toUpperCase()}${pokemonInfo.abilities?.[1].ability.name.slice(1)}`}</span></div>:<span className='ta-boxes'>{`${pokemonInfo.abilities?.[0].ability.name.charAt(0).toUpperCase()}${pokemonInfo.abilities?.[0].ability.name.slice(1)}`}</span>}
+              </div>
             </div>
             <div>
               <span>Stats</span>
