@@ -14,7 +14,6 @@ export const Welcome = () => {
 
     function submit(e) {
         e.preventDefault()
-        console.log(userName)
         dispatch({
             type: "GET_USERNAME",
             payload: userName

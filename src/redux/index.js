@@ -1,5 +1,6 @@
 const INITIAL_STATE = {
   userName: "",
+  color: "peru"
 
 }
 

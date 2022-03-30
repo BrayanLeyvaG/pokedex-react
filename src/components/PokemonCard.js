@@ -9,12 +9,11 @@ export const PokemonCard = (url) => {
     axios.get(`${url.url}`)
       .then(res => {
         setPokemonData(res.data)
-        console.log(res.data)
       })
   }, [url])
 
   function typeColor() {
-    let color = "yellow"
+    let color = "white"
     switch (pokemonData.types?.[0].type.name) {
       case 'normal':
         color = "#735259";
@@ -35,7 +34,7 @@ export const PokemonCard = (url) => {
         color = '#7E7E7E';
         break;
       case 'bug':
-        color = '#4AB648';
+        color = '#8fbf18';
         break;
       case 'ghost':
         color = '#323569';
@@ -50,7 +49,7 @@ export const PokemonCard = (url) => {
         color = '#1479FB';
         break;
       case 'grass':
-        color = '#B1DBBC';
+        color = '#62b778';
         break;
       case 'electric':
         color = '#eed535';
@@ -82,30 +81,36 @@ export const PokemonCard = (url) => {
     return color
   }
 
+  const fontColor = {
+    color:`${typeColor()}`
+  }
+
   return ( 
 
     <div className='card-container' style={{backgroundColor:`${typeColor()}`}}>
+      <div className='white-bg'>
+      </div>
       <img src={pokemonData.sprites?.other["official-artwork"].front_default}></img>
-      <h4>{pokemonData.forms?.[0].name}</h4>
-      <p>Type</p>
-      <p> {pokemonData.types?.[1]?.type.name ? `${pokemonData.types?.[0].type.name} / ${pokemonData.types?.[1]?.type.name}` : pokemonData.types?.[0].type.name}</p>
-      <hr/>
+      <h4 className='card-p-name' style={fontColor}>{`${pokemonData.forms?.[0].name.charAt(0).toUpperCase()}${pokemonData.forms?.[0].name.slice(1)}`}</h4>
+      <p className='card-title-stat'>Type</p>
+      <p className='card-type-title'> {pokemonData.types?.[1]?.type.name ? `${pokemonData.types?.[0].type.name.charAt(0).toUpperCase()}${pokemonData.types?.[0].type.name.slice(1)} / ${pokemonData.types?.[1]?.type.name.charAt(0).toUpperCase()}${pokemonData.types?.[1]?.type.name.slice(1)}` : `${pokemonData.types?.[0].type.name.charAt(0).toUpperCase()}${pokemonData.types?.[0].type.name.slice(1)}`}</p>
+      <hr className='card-separator'/>
       <div className='stats-card'>
         <div className="hp-card">
-          <p>HP</p>
-          <p>{pokemonData.stats?.[0].base_stat}</p>
+          <p className='card-title-stat'>HP</p>
+          <p style={fontColor} className='card-ind-stat'>{pokemonData.stats?.[0].base_stat}</p>
         </div>
         <div className="attack-card">
-          <p>Attack</p>
-          <p>{pokemonData.stats?.[1].base_stat}</p>
+          <p className='card-title-stat'>ATTACK</p>
+          <p style={fontColor} className='card-ind-stat'>{pokemonData.stats?.[1].base_stat}</p>
         </div>
         <div className="defense-card">
-          <p>Defense</p>
-          <p>{pokemonData.stats?.[2].base_stat}</p>
+          <p className='card-title-stat'>DEFENSE</p>
+          <p style={fontColor} className='card-ind-stat'>{pokemonData.stats?.[2].base_stat}</p>
         </div>
         <div className="defense-card">
-          <p>Speed</p>
-          <p>{pokemonData.stats?.[5].base_stat}</p>
+          <p className='card-title-stat'>SPEED</p>
+          <p style={fontColor} className='card-ind-stat'>{pokemonData.stats?.[5].base_stat}</p>
         </div>
       </div>
     </div>
