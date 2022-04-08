@@ -28,7 +28,7 @@ export const Welcome = () => {
         <h5>Welcome trainer!</h5>
         <p>What's your name?</p>
         <form onSubmit={submit} className='form-welcome'>
-            <input type="text" onChange={e => setUserName(e.target.value)} value={userName} placeholder="Type your name"/>
+            <input required type="text" onChange={e => setUserName(e.target.value)} value={userName} placeholder="Type your name"/>
             <button>Start</button>
         </form>
         <div className='red-line'></div>

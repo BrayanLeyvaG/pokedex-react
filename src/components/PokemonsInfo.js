@@ -112,7 +112,7 @@ export const PokemonsInfo = () => {
               <div className='wh-container'>
                 <span className='tm-measure'>Height</span>
                 <span className='qty-measure'>{pokemonInfo.height}</span>
-                <span className='tm-measure'>decimetres</span>
+                <span className='tm-measure'>decimeters</span>
               </div>
             </div>
             <div className='type-ab-container'>

@@ -6,10 +6,16 @@ export const PokemonCard = (url) => {
   const [pokemonData, setPokemonData] = useState({})
 
   useEffect(() => {
+    let isMounted = true
     axios.get(`${url.url}`)
-      .then(res => {
-        setPokemonData(res.data)
+      .then((res) => {
+        if (isMounted) {
+          setPokemonData(res.data)
+        }
       })
+      return () => {
+        isMounted = false
+      }
   }, [url])
 
   function typeColor() {

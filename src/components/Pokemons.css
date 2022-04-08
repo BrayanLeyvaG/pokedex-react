@@ -1,18 +1,20 @@
 .pokemons-main{
     margin: 200px auto 0 auto;
     max-width: 1200px;
+    padding: 0 10px;
 }
 
 .welcome-p{
     font-family: 'Inter', sans-serif;
     font-size: 1.2em;
+    text-align: center;
 }
 
 .form-search{
     margin: 10px 0 40px 0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     height: 100px;
     padding: 0 10px;
     
@@ -33,6 +35,7 @@
     border: none;
     width: 75%;
     font-family: 'Roboto', sans-serif;
+    margin-left: 10px;
 }
 
 .form-search button{
@@ -57,12 +60,59 @@
     font-family: 'Roboto', sans-serif;
 }
 
+.cards-container{
+  display: flex;
+  justify-content: center;
+}
+
 .link-cards{
   text-decoration: none;
 }
 
 
+@media (max-width:800px) {
+  .search-btn{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+  }
 
+  .form-search button{
+    overflow-y: hidden;
+    width: auto;
+    margin: 0 10px 10px 10px;
+    font-size: 1.3em;
+    width: 100%;
+  }
+  .form-search input{
+    text-align: center;
+    width: auto;
+    margin: 10px 10px 0 10px;
+    width: 100%;
+    font-size: 1.3em;
+    border: 1px solid gray;
+  }
+  .form-search div {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    width: auto;
+}
+
+
+  .form-search{
+    margin: 10px 0 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding: 0 10px;
+    width: 100%;
+    
+    
+}
+}
 
 
 /* Pokeball loader*/
