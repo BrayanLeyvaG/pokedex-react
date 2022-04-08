@@ -14,13 +14,18 @@ export const Pokemons = () => {
 
   //PAGINATION
   const [currentPage, setCurrentPage] = useState(1)
-  const [pokePerPage, setPokePerPage] = useState(12)
+  const [pokePerPage, setPokePerPage] = useState(8)
   const indexOfLastPoke = currentPage * pokePerPage
   const indexOfFirstPoke  = indexOfLastPoke - pokePerPage
   const currentPoke = pokemons.slice(indexOfFirstPoke, indexOfLastPoke)
 
-  function paginate(pageNumber) {
-    setCurrentPage(pageNumber)
+  function paginateNext() {
+    setCurrentPage(currentPage + 1)
+    window.scrollTo(0, 0)
+  }
+
+  function paginatePrev() {
+    setCurrentPage(currentPage - 1)
     window.scrollTo(0, 0)
   }
 
@@ -38,6 +43,9 @@ export const Pokemons = () => {
       }
   }, [])
 
+  function scrollUp() {
+    window.scrollTo(0, 0)
+  }
 
   return (
     <div className='pokemons-main'>
@@ -56,11 +64,11 @@ export const Pokemons = () => {
       <ul className='cards-container'>
         {currentPoke.map(pokemon => (
           <li key={pokemon.url} className='all-card'>
-            <Link className='link-cards' to={`/pokemons/${pokemon.name}`}><PokemonCard url={pokemon.url}/></Link>
+            <Link onClick={scrollUp} className='link-cards' to={`/pokemons/${pokemon.name}`}><PokemonCard url={pokemon.url}/></Link>
           </li>
         ))}
       </ul>}
-      <Pagination pokePerPage={pokePerPage} totalPokes={pokemons.length} paginate={paginate}/>
+      <Pagination pokePerPage={pokePerPage} totalPokes={pokemons.length} paginateNext={paginateNext} paginatePrev={paginatePrev} currentPage={currentPage}/>
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import './Pagination.css'
 
-export const Pagination = ({pokePerPage, totalPokes, paginate}) => {
+export const Pagination = ({pokePerPage, totalPokes, paginateNext, paginatePrev, currentPage}) => {
 
     const pageNumbers = []
 
@@ -13,15 +13,11 @@ export const Pagination = ({pokePerPage, totalPokes, paginate}) => {
 
   return (
     <div className='pagination-container'>
-        <ul>
-            {pageNumbers.map(number =>(
-                <li key={number}>
-                    <a onClick={(e) =>{e.preventDefault(); paginate(number)}} href='!#'>
-                        {number}
-                    </a>
-                </li>
-            ))}
-        </ul>
+        <div className='buttons-container'>
+            <button disabled={currentPage === 1 ? true : false} className='btn-pagination' onClick={paginatePrev}><i className="fas fa-chevron-left"></i></button>
+            <span className='page-number'>{currentPage}</span>
+            <button disabled={currentPage === pageNumbers.length ? true : false} className='btn-pagination' onClick={paginateNext}><i className="fas fa-chevron-right"></i></button>
+        </div>
     </div>
   )
 }
