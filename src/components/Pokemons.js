@@ -46,6 +46,8 @@ export const Pokemons = () => {
       </p>
       
       <SearchPokemon setSearchPokemons={setPokemons}/>
+      {currentPoke.length === 0 && isLoading === false? <p className='error'>There are no pokemons with that name</p>: <div></div> }
+
       {isLoading ?
       <div className="wrapper">
         <div className="pokeball">

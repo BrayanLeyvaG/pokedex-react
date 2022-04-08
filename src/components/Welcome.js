@@ -26,7 +26,7 @@ export const Welcome = () => {
     <div className='welcome-container'>
         <img src={logo} alt='Pokedex-logo'></img>
         <h5>Welcome trainer!</h5>
-        <p>What's your name?</p>
+        <p>To start, give us your name</p>
         <form onSubmit={submit} className='form-welcome'>
             <input required type="text" onChange={e => setUserName(e.target.value)} value={userName} placeholder="Type your name"/>
             <button>Start</button>

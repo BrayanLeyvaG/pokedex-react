@@ -69,6 +69,13 @@
   text-decoration: none;
 }
 
+.error{
+  text-align: center;
+  color: #D93F3F;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  font-size: 2em;
+}
 
 @media (max-width:800px) {
   .search-btn{
